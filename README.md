@@ -52,12 +52,15 @@ A mutex is used to synchronize horse positions and avoid race conditions.
 
 ---
 
-## 📂 Project structure
+## 📂 Project Structure
+```text
 horse-race/
-├── cmd/server/          # Server entry point
-├── internal/horse/      # Horse model
-├── internal/race/       # Race logic
-├── api/                 # WebSocket handlers
-├── web/                 # Frontend HTML/JS
-├── go.mod               # Dependencies
-└── README.md            # This file
+├── cmd/
+│   └── server/      # Server entry point
+├── internal/
+│   ├── horse/       # Horse model
+│   └── race/        # Race logic
+├── api/             # WebSocket handlers
+├── web/             # Frontend HTML/JS
+├── go.mod           # Dependencies
+└── README.md        # This file
