@@ -1,63 +1,63 @@
 # Horse Race Simulator 🐎
 
-Simulador concurrente de carreras de caballos desarrollado en Go, con **transmisión en tiempo real** mediante WebSockets y frontend simple en HTML/JS.
+Concurrent horse race simulator built in Go, with **real-time updates** via WebSockets and a simple frontend using HTML/JS.
 
-El proyecto demuestra:
-- Concurrencia en Go usando **goroutines**.
-- Sincronización segura con **sync.Mutex**.
-- Comunicación en tiempo real con **WebSockets**.
-- Arquitectura modular backend + frontend.
-- Manejo de rutas y servidor HTTP con `http.ServeMux`.
+This project demonstrates:
+- Concurrency in Go using **goroutines**.
+- Safe synchronization with **sync.Mutex**.
+- Real-time communication using **WebSockets**.
+- Modular backend + frontend architecture.
+- HTTP routing using `http.ServeMux`.
 
 ---
 
-## 🔧 Tecnologías
+## 🔧 Technologies
 
 - Go 1.22+
-- WebSockets con [Gorilla WebSocket](https://github.com/gorilla/websocket)
-- HTML y JavaScript para frontend simple
-- Backend modular (`internal/horse`, `internal/race`, `api`)
+- WebSockets using [Gorilla WebSocket](https://github.com/gorilla/websocket)
+- HTML and JavaScript for a simple frontend
+- Modular backend (`internal/horse`, `internal/race`, `api`)
 
 ---
 
-## 🚀 Cómo ejecutar
+## 🚀 How to run
 
-1. Clonar el repositorio:
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/tuusuario/horse-race.git
+git clone https://github.com/yourusername/horse-race.git
 cd horse-race
 ```
 
-2. Inicializar GO modules
-```bash
-go mod tidy
-```
+2. Initialize Go modules
+   ```bash
+   go mod tidy
+   ```
 
-3. Ejecutar el servidor
-```bash
-go run ./cmd/server
-```
+3. Run the server
+   ```bash
+   go run ./cmd/server
+   ```
 
-4. Abrir el navegador
-http://localhost:8080
-
----
-
-🏁 Cómo funciona
-Cada caballo se ejecuta en su propia goroutine, avanzando posiciones aleatorias.
-La carrera se transmite en tiempo real mediante WebSockets.
-El frontend muestra los caballos con barras de progreso y anuncia al ganador.
-Se utiliza mutex para sincronizar acceso a la posición de los caballos y evitar race conditions.
+4. Open your browser and visit:
+   http://localhost:8080
 
 ---
 
-📂 Estructura del proyecto
+🏁 How it works
+Each horse runs in its own goroutine, advancing random positions.
+The race is broadcasted in real-time using WebSockets.
+The frontend displays the horses with progress bars and announces the winner.
+A mutex is used to synchronize horse positions and avoid race conditions.
+
+---
+
+## 📂 Project structure
 horse-race/
-├── cmd/server/          # Entry point del servidor
-├── internal/horse/      # Modelo de caballo
-├── internal/race/       # Lógica de carrera
-├── api/                 # Handlers de WebSocket
+├── cmd/server/          # Server entry point
+├── internal/horse/      # Horse model
+├── internal/race/       # Race logic
+├── api/                 # WebSocket handlers
 ├── web/                 # Frontend HTML/JS
-├── go.mod               # Dependencias
-└── README.md            # Este archivo
+├── go.mod               # Dependencies
+└── README.md            # This file
