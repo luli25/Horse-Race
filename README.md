@@ -27,14 +27,17 @@ El proyecto demuestra:
 ```bash
 git clone https://github.com/tuusuario/horse-race.git
 cd horse-race
+```
 
 2. Inicializar GO modules
 ```bash
 go mod tidy
+```
 
 3. Ejecutar el servidor
 ```bash
 go run ./cmd/server
+```
 
 4. Abrir el navegador
 http://localhost:8080
