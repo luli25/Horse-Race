@@ -41,3 +41,23 @@ go run ./cmd/server
 
 4. Abrir el navegador
 http://localhost:8080
+
+---
+
+🏁 Cómo funciona
+Cada caballo se ejecuta en su propia goroutine, avanzando posiciones aleatorias.
+La carrera se transmite en tiempo real mediante WebSockets.
+El frontend muestra los caballos con barras de progreso y anuncia al ganador.
+Se utiliza mutex para sincronizar acceso a la posición de los caballos y evitar race conditions.
+
+---
+
+📂 Estructura del proyecto
+horse-race/
+├── cmd/server/          # Entry point del servidor
+├── internal/horse/      # Modelo de caballo
+├── internal/race/       # Lógica de carrera
+├── api/                 # Handlers de WebSocket
+├── web/                 # Frontend HTML/JS
+├── go.mod               # Dependencias
+└── README.md            # Este archivo
