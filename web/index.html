@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Horse Race</title>
+    </head>
+    <body>
+        <h1>Horse Race 🐎</h1>
+        <pre id="output"></pre>
+
+        <script>
+            const web = new WebSocket("ws://localhost:8080/ws");
+
+            web.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+
+                let text = "";
+
+                data.horses.forEach(horse => {
+                    text += horse.name + ": " + "-".repeat(horse.position) + "🐎\n";
+                });
+
+                if (data.winner) {
+                    text += "\n🏆 Winner: " + data.winner;
+                }
+
+                document.getElementById("output").textContent = text;
+            };
+        </script>
+    </body>
+</html>
